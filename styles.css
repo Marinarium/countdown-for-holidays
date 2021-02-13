@@ -9,7 +9,7 @@
 .image {
     width: 36.5625%;
     min-height: 100vh;
-    background-image: url("images/valentines-day.jpg");
+    /*background-image: url("images/valentines-day.jpg");*/
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

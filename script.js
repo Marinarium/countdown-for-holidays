@@ -1,55 +1,59 @@
 const today = new Date();
 const currentYear = today.getFullYear();
 const holidays = {
-    someDay: {
-        name: 'Some Day',
-        dateTitle: 'the 12 february',
-        date: `${currentYear}-02-12`
-    },
     valentinesDay: {
         name: 'Valentine\'s Day',
         dateTitle: 'the 14 february',
-        date: `${currentYear}-02-14`
+        date: `${currentYear}-02-14`,
+        image: 'valentines-day.jpg'
     },
     womensDay: {
         name: 'Women\'s Day',
         dateTitle: 'the 8 march',
-        date: `${currentYear}-03-08`
+        date: `${currentYear}-03-08`,
+        image: 'womens-day.jpg'
     },
     saintPatricksDay: {
         name: 'Saint Patrick\'s Day',
         dateTitle: 'the 17 march',
-        date: `${currentYear}-03-17`
+        date: `${currentYear}-03-17`,
+        image: 'saint-patrick.jpg'
     },
     victoryDay : {
         name: 'Victory Day ',
         dateTitle: 'the 9 may',
-        date: `${currentYear}-05-09`
+        date: `${currentYear}-05-09`,
+        image: 'victory-day.jpg'
     },
     kupalaNight : {
         name: 'Kupala Night ',
         dateTitle: 'the 24 June',
-        date: `${currentYear}-06-24`
+        date: `${currentYear}-06-24`,
+        image: 'kupala-night.jpg'
     },
     watermelonDay : {
         name: 'Watermelon Day',
         dateTitle: 'the 3 August',
-        date: `${currentYear}-08-03`
+        date: `${currentYear}-08-03`,
+        image: 'watermelon-day.jpg'
     },
     knowledgeDay : {
         name: 'Knowledge Day',
         dateTitle: 'the 1 September',
-        date: `${currentYear}-09-01`
+        date: `${currentYear}-09-01`,
+        image: 'knowledge-day.jpg'
     },
     halloween : {
         name: 'Halloween',
         dateTitle: 'the 31 October',
-        date: `${currentYear}-10-31`
+        date: `${currentYear}-10-31`,
+        image: 'halloween.jpg'
     },
     newYear: {
         name: 'New Year',
         dateTitle: 'the 1 january',
-        date: `${currentYear + 1}-01-01`
+        date: `${currentYear + 1}-01-01`,
+        image: 'new-year.jpg'
     }
 }
 
@@ -62,25 +66,29 @@ const closestHoliday = Object.values(holidays).reduce((previousDate, currentDate
 }, null);
 
 class Countdown {
-    constructor(nameOfHoliday, dateOfHoliday, expectedDate) {
+    constructor(nameOfHoliday, dateOfHoliday, expectedDate, bgImage) {
         this.nameOfHoliday = nameOfHoliday;
         this.dateOfHoliday = dateOfHoliday;
         this.expectedDate = new Date(expectedDate).getTime();
-        this.titles = {
+        this.bgImage = bgImage;
+        this.content = {
             name: document.querySelector('.holiday__title'),
             date: document.querySelector('.holiday__date'),
+            image: document.querySelector('.image')
         }
         this.numbers = {
             days: document.getElementById('days'),
             hours: document.getElementById('hours'),
             minutes: document.getElementById('minutes'),
-            seconds: document.getElementById('seconds'),
+            seconds: document.getElementById('seconds')
         }
     }
 
-    showText() {
-        this.titles.name.innerText = this.nameOfHoliday;
-        this.titles.date.innerText = this.dateOfHoliday;
+    showContent() {
+        this.content.name.innerText = this.nameOfHoliday;
+        this.content.date.innerText = this.dateOfHoliday;
+        (!this.bgImage) ? this.bgImage = 'default-bg.jpg' : this.bgImage;
+        this.content.image.style.backgroundImage = `url("images/${this.bgImage}")`;
     }
 
     showCountdown() {
@@ -100,13 +108,12 @@ class Countdown {
     }
 
     init () {
-        this.showText();
+        this.showContent();
         setInterval(() => {
             this.showCountdown();
         }, 1000);
     }
 }
 
-const countdownOfClosestHoliday = new Countdown(closestHoliday.name, closestHoliday.dateTitle, closestHoliday.date);
-
+const countdownOfClosestHoliday = new Countdown(closestHoliday.name, closestHoliday.dateTitle, closestHoliday.date, closestHoliday.image);
 countdownOfClosestHoliday.init();
