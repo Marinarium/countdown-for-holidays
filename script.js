@@ -1,6 +1,11 @@
 const today = new Date();
 const currentYear = today.getFullYear();
 const holidays = {
+    someDay: {
+        name: 'Some Day',
+        dateTitle: 'the 12 february',
+        date: `${currentYear}-02-12`
+    },
     valentinesDay: {
         name: 'Valentine\'s Day',
         dateTitle: 'the 14 february',
@@ -10,6 +15,11 @@ const holidays = {
         name: 'Women\'s Day',
         dateTitle: 'the 8 march',
         date: `${currentYear}-03-08`
+    },
+    saintPatricksDay: {
+        name: 'Saint Patrick\'s Day',
+        dateTitle: 'the 17 march',
+        date: `${currentYear}-03-17`
     },
     victoryDay : {
         name: 'Victory Day ',
@@ -21,12 +31,35 @@ const holidays = {
         dateTitle: 'the 24 June',
         date: `${currentYear}-06-24`
     },
+    watermelonDay : {
+        name: 'Watermelon Day',
+        dateTitle: 'the 3 August',
+        date: `${currentYear}-08-03`
+    },
+    knowledgeDay : {
+        name: 'Knowledge Day',
+        dateTitle: 'the 1 September',
+        date: `${currentYear}-09-01`
+    },
+    halloween : {
+        name: 'Halloween',
+        dateTitle: 'the 31 October',
+        date: `${currentYear}-10-31`
+    },
     newYear: {
         name: 'New Year',
         dateTitle: 'the 1 january',
         date: `${currentYear + 1}-01-01`
     }
 }
+
+const closestHoliday = Object.values(holidays).reduce((previousDate, currentDate) => {
+    const holidayDate = new Date(currentDate.date);
+    const closestDate = (previousDate) ? new Date(previousDate.date) : null;
+    const futureDate = today < holidayDate;
+
+    return (!previousDate && futureDate || (closestDate && futureDate && Math.abs(today - holidayDate) < Math.abs(today - closestDate))) ? currentDate : previousDate;
+}, null);
 
 class Countdown {
     constructor(nameOfHoliday, dateOfHoliday, expectedDate) {
@@ -74,6 +107,6 @@ class Countdown {
     }
 }
 
-const nearestHoliday = new Countdown(holidays.valentinesDay.name, holidays.valentinesDay.dateTitle, holidays.valentinesDay.date);
+const countdownOfClosestHoliday = new Countdown(closestHoliday.name, closestHoliday.dateTitle, closestHoliday.date);
 
-nearestHoliday.init();
+countdownOfClosestHoliday.init();
