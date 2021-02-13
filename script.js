@@ -1,3 +1,33 @@
+const today = new Date();
+const currentYear = today.getFullYear();
+const holidays = {
+    valentinesDay: {
+        name: 'Valentine\'s Day',
+        dateTitle: 'the 14 february',
+        date: `${currentYear}-02-14`
+    },
+    womensDay: {
+        name: 'Women\'s Day',
+        dateTitle: 'the 8 march',
+        date: `${currentYear}-03-08`
+    },
+    victoryDay : {
+        name: 'Victory Day ',
+        dateTitle: 'the 9 may',
+        date: `${currentYear}-05-09`
+    },
+    kupalaNight : {
+        name: 'Kupala Night ',
+        dateTitle: 'the 24 June',
+        date: `${currentYear}-06-24`
+    },
+    newYear: {
+        name: 'New Year',
+        dateTitle: 'the 1 january',
+        date: `${currentYear + 1}-01-01`
+    }
+}
+
 class Countdown {
     constructor(nameOfHoliday, dateOfHoliday, expectedDate) {
         this.nameOfHoliday = nameOfHoliday;
@@ -21,8 +51,8 @@ class Countdown {
     }
 
     showCountdown() {
-        const currentDate = new Date().getTime();
-        const gap = this.expectedDate - currentDate;
+        const currentUTCTime = today.getTime();
+        const gap = this.expectedDate - currentUTCTime;
 
         const seconds = Math.floor((gap / 1000) % 60);
         const minutes = Math.floor((gap / 1000 / 60) % 60);
@@ -43,6 +73,6 @@ class Countdown {
     }
 }
 
-const nearestHoliday = new Countdown('Valentine\'s day', 'the 14 february', 'feb 14, 2021 00:00:00');
+const nearestHoliday = new Countdown(holidays.valentinesDay.name, holidays.valentinesDay.dateTitle, holidays.valentinesDay.date);
 
 nearestHoliday.init();
