@@ -51,6 +51,7 @@ class Countdown {
     }
 
     showCountdown() {
+        const today = new Date();
         const currentUTCTime = today.getTime();
         const gap = this.expectedDate - currentUTCTime;
 
