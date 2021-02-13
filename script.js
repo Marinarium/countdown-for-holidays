@@ -62,7 +62,7 @@ class Countdown {
 
         this.numbers.days.innerText = String(days);
         this.numbers.hours.innerText = String(hours);
-        this.numbers.minutes.innerHTML = `<span>${('' + minutes).slice(-2, -1)}</span><span>${('' + minutes).slice(-1)}</span>`;
+        this.numbers.minutes.innerHTML = `<span>${('0' + minutes).slice(-2, -1)}</span><span>${('0' + minutes).slice(-1)}</span>`;
         this.numbers.seconds.innerHTML = `<span>${('0' + seconds).slice(-2, -1)}</span><span>${('0' + seconds).slice(-1)}</span>`;
     }
 
