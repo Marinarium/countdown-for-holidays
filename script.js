@@ -7,6 +7,12 @@ const holidays = {
         date: `${currentYear}-02-14 00:00:00`,
         image: 'valentines-day.jpg'
     },
+    movingToAlmaty: {
+        name: 'moving to Almaty',
+        dateTitle: 'the 3 march',
+        date: `${currentYear}-03-03 00:00:00`,
+        image: 'move-to-almaty.jpg'
+    },
     womensDay: {
         name: 'Women\'s Day',
         dateTitle: 'the 8 march',
