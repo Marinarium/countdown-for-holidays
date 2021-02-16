@@ -10,7 +10,7 @@ const holidays = {
     reactGame: {
         name: 'React Game',
         dateTitle: 'the 3 march',
-        date: `${currentYear}-03-08 03:00:00`,
+        date: `${currentYear}-03-03 03:00:00`,
         image: 'react.jpeg'
     },
     womensDay: {
