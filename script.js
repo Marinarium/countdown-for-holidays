@@ -7,6 +7,12 @@ const holidays = {
         date: `${currentYear}-02-14 00:00:00`,
         image: 'valentines-day.jpg'
     },
+    reactGame: {
+        name: 'React Game',
+        dateTitle: 'the 3 march',
+        date: `${currentYear}-03-08 03:00:00`,
+        image: 'react.jpeg'
+    },
     womensDay: {
         name: 'Women\'s Day',
         dateTitle: 'the 8 march',
