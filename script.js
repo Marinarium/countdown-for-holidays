@@ -1,23 +1,29 @@
 const today = new Date();
 const currentYear = today.getFullYear();
 const holidays = {
-    valentinesDay: {
-        name: 'Valentine\'s Day',
-        dateTitle: 'the 14 february',
-        date: `${currentYear}-02-14 00:00:00`,
-        image: 'valentines-day.jpg'
+      /*    valentinesDay: {
+      name: 'Valentine\'s Day',
+      dateTitle: 'the 14 february',
+      date: `${currentYear}-02-14 00:00:00`,
+      image: 'valentines-day.jpg'
     },
     reactGame: {
-        name: 'React Game',
-        dateTitle: 'the 3 march',
-        date: `${currentYear}-03-03 03:00:00`,
-        image: 'react.png'
+      name: 'React Game',
+      dateTitle: 'the 3 march',
+      date: `${currentYear}-03-03 03:00:00`,
+      image: 'react.png'
     },
     womensDay: {
-        name: 'Women\'s Day',
-        dateTitle: 'the 8 march',
-        date: `${currentYear}-03-08 00:00:00`,
-        image: 'womens-day.jpg'
+      name: 'Women\'s Day',
+      dateTitle: 'the 8 march',
+      date: `${currentYear}-03-08 00:00:00`,
+      image: 'womens-day.jpg'
+    },*/
+    byeIURU: {
+      name: 'Bye IU.RU',
+      dateTitle: 'the 9 march',
+      date: `${currentYear}-03-09 00:00:00`,
+      image: 'this-is-fine-fire.gif',
     },
     saintPatricksDay: {
         name: 'Saint Patrick\'s Day',
