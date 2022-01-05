@@ -19,8 +19,8 @@ const holidays = {
       date: `${currentYear}-03-08 00:00:00`,
       image: 'womens-day.jpg'
     },*/
-    byeIURU: {
-      name: 'Bye IU.RU',
+    bye: {
+      name: 'Bye bye',
       dateTitle: 'the 9 march',
       date: `${currentYear}-03-09 00:00:00`,
       image: 'this-is-fine-fire.gif',
