@@ -23,7 +23,7 @@ const holidays = {
       name: 'Bye bye',
       dateTitle: 'the 9 march',
       date: `${currentYear}-03-09 00:00:00`,
-      image: 'this-is-fine-fire.gif',
+      image: 'womens-day.jpg',
     },
     saintPatricksDay: {
         name: 'Saint Patrick\'s Day',
